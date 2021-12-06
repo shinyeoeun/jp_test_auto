@@ -3,6 +3,10 @@
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
 
+	<groupId>com.nts.sqa</groupId>
+	<artifactId>stac-client</artifactId>
+	<version>1.0.0</version>
+	<packaging>jar</packaging>
 	<name>stac-client</name>
 	<url>http://maven.apache.org</url>
 
