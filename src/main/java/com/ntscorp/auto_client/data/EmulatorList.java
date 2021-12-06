@@ -1,0 +1,32 @@
+package com.ntscorp.auto_client.data;
+
+public enum EmulatorList {
+	BlackBerry_Z30,
+	Blackberry_PlayBook,
+	Galaxy_Note_3,
+	Galaxy_Note_II,
+	Galaxy_S_III,
+	Kindle_Fire_HDX,
+	LG_Optimus_L70,
+	Laptop_with_HiDPI_screen,
+	Laptop_with_MDPI_screen,
+	Laptop_with_touch,
+	Microsoft_Lumia_550,
+	Microsoft_Lumia_950,
+	Nexus_10,
+	Nexus_4,
+	Nexus_5,
+	Nexus_6,
+	Nexus_7,
+	Nokia_Lumia_520,
+	Nokia_N9,
+	iPad_Mini,
+	Galaxy_S5,
+	Nexus_5X,
+	Nexus_6P,
+	iPhone_5,
+	iPhone_6,
+	iPhone_6_Plus,
+	iPad,
+	iPad_Pro
+}

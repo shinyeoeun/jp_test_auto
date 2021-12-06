@@ -1,0 +1,799 @@
+
+<!DOCTYPE html>
+<html>
+
+
+<head>
+	<meta charset='UTF-8' /> 
+	<meta name='description' content='' />
+	<meta name='robots' content='noodp, noydir' />
+	<meta name='viewport' content='width=device-width, initial-scale=1' />
+	<meta id="timeStampFormat" name="timeStampFormat" content='yyyy/MM/dd hh:mm:ss a'/>
+	
+	<link href='http://fonts.googleapis.com/css?family=Source+Sans+Pro:400,600' rel='stylesheet' type='text/css' />
+	<link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
+
+		<link href='http://cdn.rawgit.com/anshooarora/extentreports-java/b4a58fcfd1e137bd9287244035a7c80d3d73b3af/dist/css/extent.css' type='text/css' rel='stylesheet' />
+	
+	<title>Automation-Test-Reprot</title>
+
+	<style type='text/css'>
+			css-string
+	</style>
+</head>
+
+	<body class='extent dark default hide-overflow '>
+		<div id='theme-selector' alt='Click to toggle theme. To enable by default, use theme configuration.' title='Click to toggle theme. To enable by default, use theme configuration.'>
+			<span><i class='material-icons'>desktop_windows</i></span>
+		</div>
+
+<nav>
+	<div class="nav-wrapper">
+		<a href="#!" class="brand-logo blue darken-3">Extent</a>
+
+		<!-- slideout menu -->
+		<ul id='slide-out' class='side-nav fixed hide-on-med-and-down'>
+			<li class='waves-effect active'><a href='#!' view='test-view' onclick="configureView(0);chartsView('test');"><i class='material-icons'>dashboard</i></a></li>
+						<li class='waves-effect'><a href='#!' view='category-view' onclick="configureView(1)"><i class='material-icons'>label_outline</i></a></li>
+			<li class='waves-effect'><a href='#!' onclick="configureView(-1);chartsView('dashboard');" view='dashboard-view'><i class='material-icons'>track_changes</i></i></a></li>
+		</ul>
+
+		<!-- report name -->
+		<span class='report-name'>Automation-Test-Reprot</a></span>
+		
+		<!-- report headline -->
+		<span class='report-headline'></span>
+
+		<!-- nav-right -->
+		<ul id='nav-mobile' class='right hide-on-med-and-down nav-right'>
+			<li>
+                <a href='#!'>
+                    <span class='label suite-start-time blue darken-3'>2021/12/03 07:10:10 PM</span>
+				</a>
+			</li>
+			<li>
+                <a href='#!'>
+                    <span class='label blue darken-3'>3.1.5</span>
+				</a>
+			</li>
+		</ul>
+	</div>
+</nav>
+
+		<!-- container -->
+		<div class='container'>
+
+<div id='test-view' class='view'>
+				
+	<section id='controls'>
+		<div class='controls grey lighten-4'>
+			<!-- test toggle -->
+			<div class='chip transparent'>
+				<a class='dropdown-button tests-toggle' data-activates='tests-toggle' data-constrainwidth='true' data-beloworigin='true' data-hover='true' href='#'>
+					<i class='material-icons'>warning</i> Status
+				</a>
+				<ul id='tests-toggle' class='dropdown-content'>
+											<li status='pass'><a href='#!'>Pass <i class='material-icons green-text'>check_circle</i></a></li>
+						<li status='warning'><a href='#!'>Warning <i class='material-icons orange-text'>warning</i></a></li>
+					<li class='divider'></li>
+					<li status='clear' clear='true'><a href='#!'>Clear Filters <i class='material-icons'>clear</i></a></li>
+				</ul>
+			</div>
+			<!-- test toggle -->
+
+			<!-- category toggle -->
+			<div class='chip transparent'>
+				<a class='dropdown-button category-toggle' data-activates='category-toggle' data-constrainwidth='false' data-beloworigin='true' data-hover='true' href='#'>
+					<i class='material-icons'>local_offer</i> Category
+				</a>
+				<ul id='category-toggle' class='dropdown-content'>
+					<li><a href='#'>com.ntscorp.auto_client</a></li>
+					<li><a href='#'>NavigationTimeResult</a></li>
+					<li><a href='#'>JavaScriptErrorResult</a></li>
+					<li class='divider'></li>
+					<li class='clear'><a href='#!' clear='true'>Clear Filters</a></li>
+				</ul>
+			</div>
+			<!-- category toggle -->
+
+			<!-- clear filters -->
+			<div class='chip transparent hide'>
+				<a class='' id='clear-filters' alt='Clear Filters' title='Clear Filters'>
+					<i class='material-icons'>close</i> Clear
+				</a>
+			</div>
+			<!-- clear filters -->
+
+			<!-- enable dashboard -->
+			<div id='toggle-test-view-charts' class='chip transparent'>
+				<a class='pink-text' id='enable-dashboard' alt='Enable Dashboard' title='Enable Dashboard'>
+					<i class='material-icons'>track_changes</i> Dashboard
+				</a>
+			</div>
+			<!-- enable dashboard -->
+
+			<!-- search -->
+			<div class='chip transparent' alt='Search Tests' title='Search Tests'>
+				<a href="#" class='search-div'>
+					<i class='material-icons'>search</i> Search
+				</a>
+
+				<div class='input-field left hide'>
+					<input id='search-tests' type='text' class='validate browser-default' placeholder='Search Tests...'>
+				</div>
+				
+			</div>
+			<!-- search -->
+		</div>
+	</section>
+
+
+<div id='test-view-charts' class='subview-full'>
+	<div id='charts-row' class='row nm-v nm-h'>
+		<div class='col s12 m6 l6 np-h'>
+			<div class='card-panel nm-v'>
+				<div class='left panel-name'>Tests</div>
+				<div class='chart-box'>
+					<canvas id='parent-analysis' width='100' height='80'></canvas>
+				</div>
+				<div class='block text-small'>
+					<span class='tooltipped' data-position='top' data-tooltip='90%'><span class='strong'>9</span> test(s) passed</span>
+				</div>
+				<div class='block text-small'>
+					<span class='strong tooltipped' data-position='top' data-tooltip='0%'>0</span> test(s) failed, <span class='strong tooltipped' data-position='top' data-tooltip='10%'>1</span> others
+				</div>
+			</div>
+		</div>
+		
+		<div class='col s12 m6 l6 np-h'>
+			<div class='card-panel nm-v'>
+				<div class='left panel-name'>Steps</div>
+				<div class='chart-box'>
+					<canvas id='child-analysis' width='100' height='80'></canvas>
+				</div>
+				<div class='block text-small'>
+					<span class='tooltipped' data-position='top' data-tooltip='81.818%'><span class='strong'>9</span> step(s) passed</span>
+				</div>
+				<div class='block text-small'>
+					<span class='strong tooltipped' data-position='top' data-tooltip='0%'>0</span> step(s) failed, <span class='strong tooltipped' data-position='top' data-tooltip='18.182%'>2</span> others
+				</div>
+			</div>
+		</div>
+		
+	</div>
+</div>
+
+	<div class='subview-left left'>
+		
+		<div class='view-summary'>
+			<h5>Tests</h5>
+			<ul id='test-collection' class='test-collection'>
+				
+				
+				<li class='test displayed active has-leaf pass' status='pass' bdd='false' test-id='1'>
+					<div class='test-heading'>
+						<span class='test-name'>jpShoppingTestAutomation_Chrome</span>
+						<span class='test-time'>2021/12/03 07:10:10 PM</span>
+						<span class='test-status right pass'>pass</span>
+					</div>
+					<div class='test-content hide'>
+<div class='test-time-info'>
+	<span class='label start-time'>2021/12/03 07:10:10 PM</span>
+	<span class='label end-time'>2021/12/03 07:10:49 PM</span>
+	<span class='label time-taken grey lighten-1 white-text'>0h 0m 39s+52ms</span>
+</div>
+	<div class='test-desc'>com.ntscorp.auto_client.jpShoppingTestAutomation_Chrome </div>
+	<div class='test-attributes'>
+			<div class='category-list'>
+				<span class='category label white-text'>com.ntscorp.auto_client</span>
+			</div>
+	</div>
+	<ul class='collapsible node-list' data-collapsible='accordion'>
+		
+				<li class='node level-1 leaf pass' status='pass' test-id='2'>
+					<div class='collapsible-header'>
+						<h5 class='node-name'>TC_01_MY_로그인_주문내역</h5>
+						<span class="node-time label grey lighten-1 white-text">2021/12/03 07:10:22 PM</span>
+						<span class='node-duration label grey lighten-1 white-text'>0h 0m 0s+1ms</span>
+						<span class='test-status right pass'>pass</span>
+							<div class='node-desc'>[Description] 쇼핑MY: 로그인 후 주문내역 페이지 진입되는가</div>
+					</div>
+						<div class='collapsible-body'>
+								<div class='node-steps'>
+									<table class='bordered table-results'>
+										<thead>
+											<tr>
+												<th>Status</th>
+												<th>Timestamp</th>
+												<th>Details</th>
+											</tr>
+										</thead>
+										<tbody>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>7:10:22 PM</td>
+													<td class='step-details'>TC_01_MY_로그인_주문내역 (  )</td>
+												</tr>
+										</tbody>
+									</table>
+								</div>
+						</div>
+				</li>
+				<li class='node level-1 leaf pass' status='pass' test-id='3'>
+					<div class='collapsible-header'>
+						<h5 class='node-name'>TC_02_MY_상품주문_신용카드결제</h5>
+						<span class="node-time label grey lighten-1 white-text">2021/12/03 07:10:32 PM</span>
+						<span class='node-duration label grey lighten-1 white-text'>0h 0m 0s+0ms</span>
+						<span class='test-status right pass'>pass</span>
+							<div class='node-desc'>[Description] 신용카드 결제 후 주문완료가 되는지</div>
+					</div>
+						<div class='collapsible-body'>
+								<div class='node-steps'>
+									<table class='bordered table-results'>
+										<thead>
+											<tr>
+												<th>Status</th>
+												<th>Timestamp</th>
+												<th>Details</th>
+											</tr>
+										</thead>
+										<tbody>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>7:10:32 PM</td>
+													<td class='step-details'>TC_02_MY_상품주문_신용카드결제 (  )</td>
+												</tr>
+										</tbody>
+									</table>
+								</div>
+						</div>
+				</li>
+				<li class='node level-1 leaf pass' status='pass' test-id='4'>
+					<div class='collapsible-header'>
+						<h5 class='node-name'>TC_03_MY_주문확인전_주문상세_버튼노출</h5>
+						<span class="node-time label grey lighten-1 white-text">2021/12/03 07:10:34 PM</span>
+						<span class='node-duration label grey lighten-1 white-text'>0h 0m 0s+0ms</span>
+						<span class='test-status right pass'>pass</span>
+							<div class='node-desc'>[Description] 쇼핑MY: 신규주문건 주문상세 내용이 [주문상태=주문접수완료] / [버튼=취소신청]으로 노출되는가</div>
+					</div>
+						<div class='collapsible-body'>
+								<div class='node-steps'>
+									<table class='bordered table-results'>
+										<thead>
+											<tr>
+												<th>Status</th>
+												<th>Timestamp</th>
+												<th>Details</th>
+											</tr>
+										</thead>
+										<tbody>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>7:10:34 PM</td>
+													<td class='step-details'>TC_03_MY_주문확인전_주문상세_버튼노출 (  )</td>
+												</tr>
+										</tbody>
+									</table>
+								</div>
+						</div>
+				</li>
+				<li class='node level-1 leaf pass' status='pass' test-id='5'>
+					<div class='collapsible-header'>
+						<h5 class='node-name'>TC_04_MY_주문확인전_취소신청_버튼동작</h5>
+						<span class="node-time label grey lighten-1 white-text">2021/12/03 07:10:35 PM</span>
+						<span class='node-duration label grey lighten-1 white-text'>0h 0m 0s+0ms</span>
+						<span class='test-status right pass'>pass</span>
+							<div class='node-desc'>[Description] 쇼핑MY: 신규주문건 [취소신청]클릭시 취소신청 페이지로 이동되는가</div>
+					</div>
+						<div class='collapsible-body'>
+								<div class='node-steps'>
+									<table class='bordered table-results'>
+										<thead>
+											<tr>
+												<th>Status</th>
+												<th>Timestamp</th>
+												<th>Details</th>
+											</tr>
+										</thead>
+										<tbody>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>7:10:35 PM</td>
+													<td class='step-details'>TC_04_MY_주문확인전_취소신청_버튼동작 (  )</td>
+												</tr>
+										</tbody>
+									</table>
+								</div>
+						</div>
+				</li>
+				<li class='node level-1 leaf pass' status='pass' test-id='6'>
+					<div class='collapsible-header'>
+						<h5 class='node-name'>TC_05_센터_로그인_주문관리</h5>
+						<span class="node-time label grey lighten-1 white-text">2021/12/03 07:10:43 PM</span>
+						<span class='node-duration label grey lighten-1 white-text'>0h 0m 0s+0ms</span>
+						<span class='test-status right pass'>pass</span>
+							<div class='node-desc'>[Description] 센터: 정상적으로 로그인 되는가</div>
+					</div>
+						<div class='collapsible-body'>
+								<div class='node-steps'>
+									<table class='bordered table-results'>
+										<thead>
+											<tr>
+												<th>Status</th>
+												<th>Timestamp</th>
+												<th>Details</th>
+											</tr>
+										</thead>
+										<tbody>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>7:10:43 PM</td>
+													<td class='step-details'>TC_05_센터_로그인_주문관리 (  )</td>
+												</tr>
+										</tbody>
+									</table>
+								</div>
+						</div>
+				</li>
+				<li class='node level-1 leaf pass' status='pass' test-id='7'>
+					<div class='collapsible-header'>
+						<h5 class='node-name'>TC_06_센터_주문미확인_주문상세진입</h5>
+						<span class="node-time label grey lighten-1 white-text">2021/12/03 07:10:45 PM</span>
+						<span class='node-duration label grey lighten-1 white-text'>0h 0m 0s+0ms</span>
+						<span class='test-status right pass'>pass</span>
+							<div class='node-desc'>[Description] 센터: 주문미확인 조회결과에 주문건이 노출되며 주문상세페이지에 진입되는가</div>
+					</div>
+						<div class='collapsible-body'>
+								<div class='node-steps'>
+									<table class='bordered table-results'>
+										<thead>
+											<tr>
+												<th>Status</th>
+												<th>Timestamp</th>
+												<th>Details</th>
+											</tr>
+										</thead>
+										<tbody>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>7:10:45 PM</td>
+													<td class='step-details'>TC_06_센터_주문미확인_주문상세진입 (  )</td>
+												</tr>
+										</tbody>
+									</table>
+								</div>
+						</div>
+				</li>
+				<li class='node level-1 leaf pass' status='pass' test-id='8'>
+					<div class='collapsible-header'>
+						<h5 class='node-name'>TC_07_센터_주문확인</h5>
+						<span class="node-time label grey lighten-1 white-text">2021/12/03 07:10:47 PM</span>
+						<span class='node-duration label grey lighten-1 white-text'>0h 0m 0s+0ms</span>
+						<span class='test-status right pass'>pass</span>
+							<div class='node-desc'>[Description] 센터: [주문확인]클릭시 주문확인팝업 호출 -> 주문확인처리되는가</div>
+					</div>
+						<div class='collapsible-body'>
+								<div class='node-steps'>
+									<table class='bordered table-results'>
+										<thead>
+											<tr>
+												<th>Status</th>
+												<th>Timestamp</th>
+												<th>Details</th>
+											</tr>
+										</thead>
+										<tbody>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>7:10:47 PM</td>
+													<td class='step-details'>TC_07_센터_주문확인 (  )</td>
+												</tr>
+										</tbody>
+									</table>
+								</div>
+						</div>
+				</li>
+				<li class='node level-1 leaf pass' status='pass' test-id='9'>
+					<div class='collapsible-header'>
+						<h5 class='node-name'>TC_08_센터_발송처리</h5>
+						<span class="node-time label grey lighten-1 white-text">2021/12/03 07:10:49 PM</span>
+						<span class='node-duration label grey lighten-1 white-text'>0h 0m 0s+0ms</span>
+						<span class='test-status right pass'>pass</span>
+							<div class='node-desc'>[Description] 센터: [발송처리]클릭시 발송처리팝업 호출 -> 주문확인처리되는가</div>
+					</div>
+						<div class='collapsible-body'>
+								<div class='node-steps'>
+									<table class='bordered table-results'>
+										<thead>
+											<tr>
+												<th>Status</th>
+												<th>Timestamp</th>
+												<th>Details</th>
+											</tr>
+										</thead>
+										<tbody>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>7:10:49 PM</td>
+													<td class='step-details'>TC_08_센터_발송처리 (  )</td>
+												</tr>
+										</tbody>
+									</table>
+								</div>
+						</div>
+				</li>
+	</ul>
+					</div>
+				</li>
+				
+				
+				<li class='test displayed active  pass' status='pass' bdd='false' test-id='10'>
+					<div class='test-heading'>
+						<span class='test-name'>Performance Time Result</span>
+						<span class='test-time'>2021/12/03 07:10:50 PM</span>
+						<span class='test-status right pass'>pass</span>
+					</div>
+					<div class='test-content hide'>
+<div class='test-time-info'>
+	<span class='label start-time'>2021/12/03 07:10:50 PM</span>
+	<span class='label end-time'>2021/12/03 07:10:50 PM</span>
+	<span class='label time-taken grey lighten-1 white-text'>0h 0m 0s+1ms</span>
+</div>
+	<div class='test-attributes'>
+			<div class='category-list'>
+				<span class='category label white-text'>NavigationTimeResult</span>
+			</div>
+	</div>
+	<div class='test-steps'>
+		<table class='bordered table-results'>
+			<thead>
+				<tr>
+					<th>Status</th>
+					<th>Timestamp</th>
+					<th>Details</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>7:10:50 PM</td>
+					<td class='step-details'><table><tr><td>URL</td><td>Count</td><td>Max</td><td>Average</td><td>Min</td></tr><tr><td><a href=https://access.line.me/oauth2/v2.1/login?loginState=6TAkmtyPEt4Q4sd1ms1eI5&loginChannelId=1655725825&returnUri=%2Foauth2%2Fv2.1%2Fauthorize%2Fconsent%3Fscope%3Dprofile%2Bemail%2Bopenid%26response_type%3Dcode%26redirect_uri%3Dhttps%253A%252F%252Faccounts.mysmartstore.jp%252Foauth%252Fcallback%26state%3DDGQk0g0KH4I0UWxc%26client_id%3D1655725825#/ target="_black"'>https://access.line.me/oauth2/v2.1/login?loginState=6TAkmtyPEt4Q4sd1ms1eI5&loginChannelId=1655725825&returnUri=%2Foauth2%2Fv2.1%2Fauthorize%2Fconsent%3Fscope%3Dprofile%2Bemail%2Bopenid%26response_type%3Dcode%26redirect_uri%3Dhttps%253A%252F%252Faccounts.mysmartstore.jp%252Foauth%252Fcallback%26state%3DDGQk0g0KH4I0UWxc%26client_id%3D1655725825#/</a></td><td>1</td><td>1146</td><td>1146</td><td>1146</td></tr><tr><td><a href=https://accounts.mysmartstore.jp/login/finish?url=https%3A%2F%2Fmysmartstore.jp%2Fmy%2Forder-info target="_black"'>https://accounts.mysmartstore.jp/login/finish?url=https%3A%2F%2Fmysmartstore.jp%2Fmy%2Forder-info</a></td><td>3</td><td>1120</td><td>1120</td><td>1120</td></tr><tr><td><a href=https://1ststore.mysmartstore.jp/products/100004253 target="_black"'>https://1ststore.mysmartstore.jp/products/100004253</a></td><td>1</td><td>1120</td><td>1120</td><td>1120</td></tr><tr><td><a href=https://mysmartstore.jp/order/cart target="_black"'>https://mysmartstore.jp/order/cart</a></td><td>3</td><td>942</td><td>942</td><td>942</td></tr><tr><td><a href=https://mysmartstore.jp/order/delivery-info/9f284ac9-84bb-4601-90cc-792366171d1c target="_black"'>https://mysmartstore.jp/order/delivery-info/9f284ac9-84bb-4601-90cc-792366171d1c</a></td><td>2</td><td>862</td><td>862</td><td>862</td></tr><tr><td><a href=https://mysmartstore.jp/order/pay-info/9f284ac9-84bb-4601-90cc-792366171d1c target="_black"'>https://mysmartstore.jp/order/pay-info/9f284ac9-84bb-4601-90cc-792366171d1c</a></td><td>2</td><td>728</td><td>728</td><td>728</td></tr><tr><td><a href=https://mysmartstore.jp/order/order-info/9f284ac9-84bb-4601-90cc-792366171d1c target="_black"'>https://mysmartstore.jp/order/order-info/9f284ac9-84bb-4601-90cc-792366171d1c</a></td><td>2</td><td>716</td><td>716</td><td>716</td></tr><tr><td><a href=https://mysmartstore.jp/order/payment-success?hashKey=aed6cc8c-4bbd-45cb-80b6-d6a16f3ab6b1&orderResult=SUCCESS&rsvseq=6e016092-d812-4b7a-8f0b-e29a81506b74 target="_black"'>https://mysmartstore.jp/order/payment-success?hashKey=aed6cc8c-4bbd-45cb-80b6-d6a16f3ab6b1&orderResult=SUCCESS&rsvseq=6e016092-d812-4b7a-8f0b-e29a81506b74</a></td><td>2</td><td>599</td><td>599</td><td>599</td></tr><tr><td><a href=https://mysmartstore.jp/my/order-info target="_black"'>https://mysmartstore.jp/my/order-info</a></td><td>2</td><td>580</td><td>580</td><td>580</td></tr><tr><td><a href=https://mysmartstore.jp/my/order-detail/202112031000000032 target="_black"'>https://mysmartstore.jp/my/order-detail/202112031000000032</a></td><td>1</td><td>580</td><td>580</td><td>580</td></tr><tr><td><a href=https://accounts.smartstorecenter.jp/login?url=https%3A%2F%2Fsmartstorecenter.jp%2F%23%2Flogin target="_black"'>https://accounts.smartstorecenter.jp/login?url=https%3A%2F%2Fsmartstorecenter.jp%2F%23%2Flogin</a></td><td>15</td><td>580</td><td>580</td><td>580</td></tr><tr><td><a href=https://account.line.biz/login?redirectUri=https%3A%2F%2Faccount.line.biz%2Foauth2%2Fcallback%3Fscope%3Demail%26response_type%3Dcode%26redirect_uri%3Dhttps%253A%252F%252Faccounts.smartstorecenter.jp%252Foauth%252Fcallback%26state%3D6APYsEh_vnQ0TUnn%26client_id%3D4 target="_black"'>https://account.line.biz/login?redirectUri=https%3A%2F%2Faccount.line.biz%2Foauth2%2Fcallback%3Fscope%3Demail%26response_type%3Dcode%26redirect_uri%3Dhttps%253A%252F%252Faccounts.smartstorecenter.jp%252Foauth%252Fcallback%26state%3D6APYsEh_vnQ0TUnn%26client_id%3D4</a></td><td>1</td><td>520</td><td>520</td><td>520</td></tr><tr><td><a href=https://smartstorecenter.jp/#/login target="_black"'>https://smartstorecenter.jp/#/login</a></td><td>1</td><td>484</td><td>484</td><td>484</td></tr><tr><td><a href=https://smartstorecenter.jp/#/home/dashboard target="_black"'>https://smartstorecenter.jp/#/home/dashboard</a></td><td>2</td><td>484</td><td>484</td><td>484</td></tr><tr><td><a href=https://smartstorecenter.jp/#/order/list/order-unconfirmed target="_black"'>https://smartstorecenter.jp/#/order/list/order-unconfirmed</a></td><td>2</td><td>484</td><td>484</td><td>484</td></tr><tr><td><a href=https://smartstorecenter.jp/#/order/detail/202112031000000054 target="_black"'>https://smartstorecenter.jp/#/order/detail/202112031000000054</a></td><td>1</td><td>244</td><td>244</td><td>244</td></tr></table></td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+					</div>
+				</li>
+				
+				
+				<li class='test displayed active  warning' status='warning' bdd='false' test-id='11'>
+					<div class='test-heading'>
+						<span class='test-name'>JavaScript Error Result</span>
+						<span class='test-time'>2021/12/03 07:10:50 PM</span>
+						<span class='test-status right warning'>warning</span>
+					</div>
+					<div class='test-content hide'>
+<div class='test-time-info'>
+	<span class='label start-time'>2021/12/03 07:10:50 PM</span>
+	<span class='label end-time'>2021/12/03 07:10:50 PM</span>
+	<span class='label time-taken grey lighten-1 white-text'>0h 0m 0s+0ms</span>
+</div>
+	<div class='test-attributes'>
+			<div class='category-list'>
+				<span class='category label white-text'>JavaScriptErrorResult</span>
+			</div>
+	</div>
+	<div class='test-steps'>
+		<table class='bordered table-results'>
+			<thead>
+				<tr>
+					<th>Status</th>
+					<th>Timestamp</th>
+					<th>Details</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr class='log' status='warning'>
+					<td class='status warning' title='warning' alt='warning'><i class='material-icons'>warning</i></td>
+					<td class='timestamp'>7:10:50 PM</td>
+					<td class='step-details'><a href=https://mysmartstore.jp/my/order-info target="_black"'>https://mysmartstore.jp/my/order-info</a><br>https://mysmartstore.jp/order/payment-success?hashKey=aed6cc8c-4bbd-45cb-80b6-d6a16f3ab6b1&orderResult=SUCCESS&rsvseq=6e016092-d812-4b7a-8f0b-e29a81506b74 - Access to fetch at 'https://mssjp-shopper.pstatic.net/order/211124-145602/order/locales/ja_JP/order.json' from origin 'https://mysmartstore.jp' has been blocked by CORS policy: No 'Access-Control-Allow-Origin' header is present on the requested resource. If an opaque response serves your needs, set the request's mode to 'no-cors' to fetch the resource with CORS disabled.</td>
+				</tr>
+				<tr class='log' status='warning'>
+					<td class='status warning' title='warning' alt='warning'><i class='material-icons'>warning</i></td>
+					<td class='timestamp'>7:10:50 PM</td>
+					<td class='step-details'><a href=https://mysmartstore.jp/my/order-info target="_black"'>https://mysmartstore.jp/my/order-info</a><br>https://mssjp-shopper.pstatic.net/order/211124-145602/order/locales/ja_JP/order.json - Failed to load resource: net::ERR_FAILED</td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+					</div>
+				</li>
+			</ul>
+		</div>
+	</div>
+	<!-- subview left -->
+
+	<div class='subview-right left'>
+		<div class='view-summary'>
+			<h5 class='test-name'></h5>
+
+			<div id='step-filters' class="right">
+				<span class="blue-text" status="info" alt="info" title="info"><i class="material-icons">info_outline</i></span>
+				<span class="green-text" status="pass" alt="pass" title="pass"><i class="material-icons">check_circle</i></span>
+				<span class="red-text" status="fail" alt="fail" title="fail"><i class="material-icons">cancel</i></span>
+				<span class="red-text text-darken-4" status="fatal" alt="fatal" title="fatal"><i class="material-icons">cancel</i></span>
+				<span class="pink-text text-lighten-1" status="error" alt="error" title="error"><i class="material-icons">error</i></span>
+				<span class="orange-text" alt="warning" status="warning" title="warning"><i class="material-icons">warning</i></span>
+				<span class="teal-text" status="skip" alt="skip" title="skip"><i class="material-icons">redo</i></span>
+				<span status="clear" alt="Clear filters" title="Clear filters"><i class="material-icons">clear</i></span>
+			</div>
+		</div>
+	</div>
+	<!-- subview right -->
+
+</div>
+<!-- test view -->
+<div id='category-view' class='view hide'>
+
+	<section id='controls'>
+		<div class='controls grey lighten-4'>
+			<!-- search -->
+			<div class='chip transparent' alt='Search Tests' title='Search Tests'>
+				<a href="#" class='search-div'>
+					<i class='material-icons'>search</i> Search
+				</a>
+				
+				<div class='input-field left hide'>
+					<input id='search-tests' type='text' class='validate browser-default' placeholder='Search Tests...'>
+				</div>
+				
+			</div>
+			<!-- search -->
+		</div>
+	</section>
+
+	<div class='subview-left left'>
+		
+		<div class='view-summary'>
+			<h5>Categories</h3>
+			<ul id='category-collection' class='category-collection'>
+				
+				<li class='category displayed active'>
+					<div class='category-heading'>
+						<span class='category-name'>com.ntscorp.auto_client</span>
+						<span class='category-status right'>
+							<span class='label pass'>1</span>
+						</span>
+					</div>
+					<div class='category-content hide'>
+						<div class='category-status-counts'>
+							<span class='label green accent-4 white-text'>Passed: 1</span>
+							
+							
+						</div>
+					
+						<div class='category-tests'>
+							<table class='bordered table-results'>
+								<thead>
+									<tr>
+										<th>Timestamp</th>
+										<th>TestName</th>
+										<th>Status</th>
+									</tr>
+								</thead>
+								<tbody>
+									<tr>
+										<td>2021/12/03 07:10:10 PM</td>
+										<td class='linked' test-id='1'>jpShoppingTestAutomation_Chrome</td>
+										<td><span class='test-status pass'>pass</span></td>
+									</tr>
+								</tbody>
+							</table>
+						</div>
+					</div>
+				</li>
+				<li class='category displayed active'>
+					<div class='category-heading'>
+						<span class='category-name'>NavigationTimeResult</span>
+						<span class='category-status right'>
+							<span class='label pass'>1</span>
+						</span>
+					</div>
+					<div class='category-content hide'>
+						<div class='category-status-counts'>
+							<span class='label green accent-4 white-text'>Passed: 1</span>
+							
+							
+						</div>
+					
+						<div class='category-tests'>
+							<table class='bordered table-results'>
+								<thead>
+									<tr>
+										<th>Timestamp</th>
+										<th>TestName</th>
+										<th>Status</th>
+									</tr>
+								</thead>
+								<tbody>
+									<tr>
+										<td>2021/12/03 07:10:50 PM</td>
+										<td class='linked' test-id='10'>Performance Time Result</td>
+										<td><span class='test-status pass'>pass</span></td>
+									</tr>
+								</tbody>
+							</table>
+						</div>
+					</div>
+				</li>
+				<li class='category displayed active'>
+					<div class='category-heading'>
+						<span class='category-name'>JavaScriptErrorResult</span>
+						<span class='category-status right'>
+							<span class='label others'>1</span>
+						</span>
+					</div>
+					<div class='category-content hide'>
+						<div class='category-status-counts'>
+							
+							
+							<span class='label yellow darken-2 white-text'>Others: 1</span>
+						</div>
+					
+						<div class='category-tests'>
+							<table class='bordered table-results'>
+								<thead>
+									<tr>
+										<th>Timestamp</th>
+										<th>TestName</th>
+										<th>Status</th>
+									</tr>
+								</thead>
+								<tbody>
+									<tr>
+										<td>2021/12/03 07:10:50 PM</td>
+										<td class='linked' test-id='11'>JavaScript Error Result</td>
+										<td><span class='test-status warning'>warning</span></td>
+									</tr>
+								</tbody>
+							</table>
+						</div>
+					</div>
+				</li>
+
+			</ul>
+		</div>
+	</div>
+
+	<div class='subview-right left'>
+		<div class='view-summary'>
+			<h5 class='category-name'></h5>
+		</div>
+	</div>
+</div>
+<!-- category view -->
+<!-- exception view -->
+<div id='dashboard-view' class='view hide'>
+	<div class='card-panel transparent np-v'>
+		<h5>Dashboard</h5>
+
+		<div class='row'>
+			<div class='col s2'>
+				<div class='card-panel r'>
+					Tests
+					<div class='panel-lead'>10</div>
+				</div>
+			</div>
+			<div class='col s2'>
+				<div class='card-panel r'>
+					Steps
+					<div class='panel-lead'>11</div>
+				</div>
+			</div>
+			<div class='col s2'>
+				<div class='card-panel r'>
+					Start
+					<div class='panel-lead'>2021/12/03 07:10:10 PM</div>
+				</div>
+			</div>
+			<div class='col s2'>
+				<div class='card-panel r'>
+			 		End
+			 		<div class='panel-lead'>2021/12/03 07:10:50 PM</div>
+				</div>
+			</div>
+			<div class='col s2'>
+				<div class='card-panel r'>
+					Time Taken
+					<div class='panel-lead'>0h 0m 39s+716ms</div>
+				</div>
+			</div>
+			<div class='col s6'>
+				<div class='card-panel dashboard-categories'>
+					<span class='right label cyan white-text'>Categories</span><p>&nbsp;</p>
+					
+					<table>
+						<tr>
+							<th>Name</th>
+							<th>Passed</th>
+							<th>Failed</th>
+							<th>Others</th>
+							<th>Passed %</th>
+						</tr>
+						<tr>
+							<td>com.ntscorp.auto_client</td>
+							<td>1</td>
+							<td>0</td>
+							<td>0</td>
+							<td>
+									100%
+							</td>
+						</tr>
+						<tr>
+							<td>NavigationTimeResult</td>
+							<td>1</td>
+							<td>0</td>
+							<td>0</td>
+							<td>
+									100%
+							</td>
+						</tr>
+						<tr>
+							<td>JavaScriptErrorResult</td>
+							<td>0</td>
+							<td>0</td>
+							<td>1</td>
+							<td>
+									0%
+							</td>
+						</tr>
+					</table>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+<!-- dashboard view -->
+<!-- testrunner-logs view -->
+		</div>
+		<!-- container -->
+
+		<script>
+			var statusGroup = {
+				passParent: 9,
+				failParent: 0,
+				fatalParent: 0,
+				errorParent: 0,
+				warningParent: 1,
+				skipParent: 0,
+				exceptionsParent: 1,
+				
+				passChild: 9,
+				failChild: 0,
+				fatalChild: 0,
+				errorChild: 0,
+				warningChild: 2,
+				skipChild: 0,
+				infoChild: 0,
+				exceptionsChild: 2,
+				
+				passGrandChild: 0,
+				failGrandChild: 0,
+				fatalGrandChild: 0,
+				errorGrandChild: 0,
+				warningGrandChild: 0,
+				skipGrandChild: 0,
+				infoGrandChild: 0,
+				exceptionsGrandChild: 0,
+			};
+		</script>
+		
+			<script src='http://cdn.rawgit.com/anshooarora/extentreports-java/fca20fb7653aade98810546ab96a2a4360e3e712/dist/js/extent.js' type='text/javascript'></script>
+		
+		
+ 		<script type='text/javascript'>
+	 			js-string
+ 		</script>
+	</body>
+	
+</html>
