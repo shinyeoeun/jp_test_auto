@@ -76,11 +76,6 @@
 			</exclusions>
 		</dependency>
 		<dependency>
-			<groupId>api-gateway-hmac</groupId>
-			<artifactId>api-gateway-hmac</artifactId>
-			<version>2.3.2</version>
-		</dependency>
-		<dependency>
 			<groupId>com.jcraft</groupId>
 			<artifactId>jsch</artifactId>
 			<version>0.1.55</version>
