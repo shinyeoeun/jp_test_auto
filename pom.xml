@@ -124,8 +124,8 @@
 
 	<repositories>
 		<repository>
-			<id>releases</id>
-			<url>http://10.168.252.200:8081/nexus/</url>
+			<id>releases</id> 
+			<url>http://10.168.252.200:8081/nexus/content/repositories/releases</url>
 		</repository>
 		<repository>
 			<id>maven-repo</id>
